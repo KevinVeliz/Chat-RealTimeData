@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color='success'>
+      <ion-title>
+          Chat
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card *ngFor='let chat of chats'>
+      <ion-card-header id="email">
+         <span id="text1">
+           {{ chat.email}} dice:
+        </span> 
+      </ion-card-header>
+      <ion-card-content id="message">
+        <span id="text">
+          {{ chat.message}}
+       </span>
+      </ion-card-content>
+  </ion-card>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+      <ion-input placeholder='Enter text' [(ngModel)]='message'></ion-input>
+      <ion-buttons slot='end'>
+          Send
+          <ion-button (click)='sendMessage()'>
+              <ion-icon name='send-outline'></ion-icon>
+          </ion-button>
+     
+      </ion-buttons>
+  </ion-toolbar>
+  <ion-footer (click)="logout()">
+    <ion-toolbar color="secondary">
+      <ion-title>Cerrar sesión</ion-title>
+    </ion-toolbar>
+  </ion-footer>
+</ion-footer>
